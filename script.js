@@ -1,8 +1,12 @@
-alert(1);
-
-function get_cookie(name) {
-    var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
-    return value? value[2] : null;
+var getCookies = function(){
+  var pairs = document.cookie.split(";");
+  var cookies = {};
+  for (var i=0; i<pairs.length; i++){
+    var pair = pairs[i].split("=");
+    cookies[(pair[0]+'').trim()] = unescape(pair.slice(1).join('='));
+  }
+  return cookies;
 }
 
-alert("cookie: " + get_cookie("flag"));
+var myCookies = getCookies();
+alert(myCookies.secret); // "do not tell you"

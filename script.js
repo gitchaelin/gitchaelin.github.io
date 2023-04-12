@@ -5,4 +5,4 @@ function get_cookie(name) {
     return value? value[2] : null;
 }
 
-alert("cookie: " + get_cookie("flag"))
+alert("cookie: " + get_cookie("flag"));

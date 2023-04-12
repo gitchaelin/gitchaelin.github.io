@@ -9,4 +9,5 @@ var getCookies = function(){
 }
 
 var myCookies = getCookies();
+console.log(myCookies);
 alert(myCookies.secret); // "do not tell you"

